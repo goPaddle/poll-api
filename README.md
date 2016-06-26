@@ -68,7 +68,7 @@ gem 'bcrypt'
 Now, navigating to the root of your app and do:
 
 ```sh
-$ bundle install
+$ sudo apt-get install -y libmysqlclient-dev  && bundle install
 ```
 
 If at some point some command did not work for your project you need to put ```bundle exec``` at front of it so that the command is executed in the context of the specific bundle of gems your project has.
@@ -102,12 +102,13 @@ Configure database by editing ```config/database.yml```
 Navigate to root of your app:
 
 ```sh
-$ rails server 
+$ rails server --binding=0.0.0.0
+
 ```
 or
 
 ```sh
-rails s
+rails s --binding=0.0.0.0
 ```
 
 #### 5. Generating Entities
