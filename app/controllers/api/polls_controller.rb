@@ -25,4 +25,10 @@ class Api::PollsController < ApplicationController
 	def create_poll_params
 		params.permit(:question, :options => [])
 	end
+	
+	def destroy
+	 @poll = Poll.find(params[:id])
+        @poll.destroy
+        render json:{success: true}
+ end
 end
